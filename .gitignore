@@ -1,0 +1,7 @@
+.idea
+*.pyc
+.tox
+pbr-*
+doc/build/*
+.testrepository
+fuel_specs.egg*

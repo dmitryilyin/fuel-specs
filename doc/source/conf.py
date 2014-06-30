@@ -63,7 +63,14 @@ copyright = u'2014, Fuel'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build']
+exclude_patterns = ['build']
+
+# A list of paths that contain custom static files
+# (such as style sheets or script files). Relative paths are taken
+# as relative to the configuration directory. They are copied to the
+# output’s _static directory after the theme’s static files, so a file
+# named default.css will overwrite the theme’s default.css.
+html_static_path = ['static']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None

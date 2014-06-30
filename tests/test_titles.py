@@ -12,6 +12,7 @@
 
 import glob
 import re
+import os
 
 import docutils.core
 import testtools
@@ -83,8 +84,10 @@ class TestTitles(testtools.TestCase):
     def test_template(self):
         files = ['specs/template.rst'] + glob.glob('specs/*/*')
         for filename in files:
+            if os.path.isdir(filename):
+                continue
             self.assertTrue(filename.endswith(".rst"),
-                            "spec's file must uses 'rst' extension.")
+            "spec's file '%s' must uses 'rst' extension." % filename)
             with open(filename) as f:
                 data = f.read()
 
